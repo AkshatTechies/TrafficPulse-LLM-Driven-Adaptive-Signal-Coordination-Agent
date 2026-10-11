@@ -2,7 +2,7 @@
 
 An LLM agent that coordinates **8 traffic signals** in a real Lucknow junction cluster (Hazratganj) inside the SUMO simulator. Every 30 simulated seconds it reads live queue data, asks Gemini for a green-time plan, passes every decision through a safety layer, and applies it. Results are measured against the junction's fixed-time baseline on identical Indian mixed traffic.
 
-![TrafficPulse results dashboard](docs/dashboard.png)
+![TrafficPulse results dashboard](results/dashboard.png)
 
 > Interactive version: [`results/dashboard.html`](results/dashboard.html) (open it in any browser).
 
