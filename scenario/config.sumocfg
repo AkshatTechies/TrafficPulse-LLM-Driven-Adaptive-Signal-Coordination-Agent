@@ -1,0 +1,14 @@
+<configuration>
+    <input>
+        <net-file value="junction.net.xml"/>
+        <route-files value="routes.rou.xml"/>
+    </input>
+    <time>
+        <begin value="0"/>
+        <end value="600"/>
+    </time>
+    <output>
+        <tripinfo-output value="baseline_tripinfo.xml"/>
+        <summary-output value="baseline_summary.xml"/>
+    </output>
+</configuration>

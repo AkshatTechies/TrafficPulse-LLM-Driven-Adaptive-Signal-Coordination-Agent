@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-09-29T21:41:53.522157+05:30 by Eclipse SUMO sumo 1.27.1
+<sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="scenario/junction.net.xml"/>
+        <route-files value="scenario/routes.rou.xml"/>
+    </input>
+
+    <output>
+        <summary-output value="scenario/baseline_summary.xml"/>
+        <tripinfo-output value="scenario/baseline_tripinfo.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <end value="600"/>
+    </time>
+
+    <report>
+        <no-step-log value="true"/>
+    </report>
+
+    <traci_server>
+        <remote-port value="8813"/>
+    </traci_server>
+
+</sumoConfiguration>
+-->
+
+<tripinfos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/tripinfo_file.xsd">
+    <tripinfo id="moto0" depart="0.00" departLane="1496912220#0_1" departPos="2.30" departSpeed="27.78" departDelay="0.00" arrival="12.00" arrivalLane="1392550047#0_0" arrivalPos="2.18" arrivalSpeed="7.38" duration="12.00" routeLength="119.02" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="5.17" rerouteNo="0" devices="tripinfo_moto0" vType="moto_motorcycle" speedFactor="1.06" vaporized=""/>
+    <tripinfo id="car0" depart="2.00" departLane="1496912220#0_1" departPos="5.10" departSpeed="18.67" departDelay="2.00" arrival="16.00" arrivalLane="1392550047#0_0" arrivalPos="2.18" arrivalSpeed="8.94" duration="14.00" routeLength="116.22" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="6.41" rerouteNo="0" devices="tripinfo_car0" vType="car_passenger" speedFactor="0.94" vaporized=""/>
+    <tripinfo id="bus0" depart="4.00" departLane="1496912220#0_1" departPos="12.10" departSpeed="14.19" departDelay="4.00" arrival="19.00" arrivalLane="1392550047#0_0" arrivalPos="2.18" arrivalSpeed="6.78" duration="15.00" routeLength="109.22" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="7.33" rerouteNo="0" devices="tripinfo_bus0" vType="bus_bus" speedFactor="1.00" vaporized=""/>
+    <tripinfo id="moto31" depart="38.00" departLane="210669986#0_0" departPos="2.30" departSpeed="27.71" departDelay="0.80" arrival="39.00" arrivalLane="210669986#1_0" arrivalPos="8.09" arrivalSpeed="26.29" duration="1.00" routeLength="20.88" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="0.05" rerouteNo="0" devices="tripinfo_moto31" vType="moto_motorcycle" speedFactor="1.00" vaporized=""/>
+    <tripinfo id="moto37" depart="45.00" departLane="1392550047#0_0" departPos="2.18" departSpeed="27.67" departDelay="0.60" arrival="46.00" arrivalLane="1392550047#0_0" arrivalPos="2.18" arrivalSpeed="26.31" duration="1.00" routeLength="0.00" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="0.05" rerouteNo="0" devices="tripinfo_moto37" vType="moto_motorcycle" speedFactor="1.00" vaporized=""/>
+    <tripinfo id="moto43" depart="52.00" departLane="209442175#1_0" departPos="2.30" departSpeed="26.05" departDelay="0.40" arrival="54.00" arrivalLane="209442175#1_0" arrivalPos="32.61" arrivalSpeed="13.37" duration="2.00" routeLength="30.31" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="0.59" rerouteNo="0" devices="tripinfo_moto43" vType="moto_motorcycle" speedFactor="0.94" vaporized=""/>
+</tripinfos>

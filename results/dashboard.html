@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lucknow Junction — Signal Agent Results</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#14171A; --panel:#1B1F23; --panel2:#20252A; --line:#2C3238;
+    --amber:#E8A33D; --teal:#2F9E8F; --red:#D9695F;
+    --text:#EDEDE7; --muted:#8B9198;
+    box-sizing:border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *{box-sizing:inherit}
+  html{scroll-padding-top: env(safe-area-inset-top, 0px);}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:'Space Grotesk',sans-serif; min-height:100%;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  header{padding:28px clamp(16px,4vw,48px) 20px; border-bottom:1px solid var(--line);
+    display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:12px;}
+  header h1{margin:0; font-size:clamp(20px,2.4vw,28px); font-weight:600; letter-spacing:-0.01em;}
+  header .sub{color:var(--muted); font-size:13px; margin-top:4px;}
+  header .status{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--teal); display:flex; align-items:center; gap:8px;}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);}
+
+  main{padding:24px clamp(16px,4vw,48px) 60px; max-width:1200px; margin:0 auto;}
+
+  .hero{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:24px 28px; margin-bottom:28px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;}
+  .hero .big{font-family:'IBM Plex Mono',monospace; font-size:44px; color:var(--teal); font-weight:600;}
+  .hero .big-label{color:var(--muted); font-size:12px; margin-top:4px;}
+  .hero .right{text-align:right; max-width:420px;}
+  .hero .right p{font-size:13px; color:var(--muted); line-height:1.6; margin:0;}
+
+  .kpi-row{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-bottom:28px;}
+  .kpi{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:18px 20px;}
+  .kpi .label{color:var(--muted); font-size:12px; margin-bottom:10px;}
+  .kpi .figures{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;}
+  .kpi .base{font-family:'IBM Plex Mono',monospace; font-size:20px; color:var(--text);}
+  .kpi .arrow{color:var(--muted); font-size:13px;}
+  .kpi .agent{font-family:'IBM Plex Mono',monospace; font-size:20px;}
+  .kpi .agent.good{color:var(--teal);}
+  .kpi .agent.bad{color:var(--red);}
+  .kpi .delta{font-size:12px; margin-top:6px; font-family:'IBM Plex Mono',monospace;}
+  .kpi .delta.good{color:var(--teal);}
+  .kpi .delta.bad{color:var(--red);}
+
+  section{margin-bottom:32px;}
+  .section-head{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:14px;}
+  .section-head h2{font-size:15px; margin:0; font-weight:600; color:var(--text);}
+  .section-head .note{font-size:12px; color:var(--muted);}
+
+  .timeline{background:var(--panel); border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  .titem{display:grid; grid-template-columns:110px 1fr 130px; gap:14px; padding:14px 18px; border-bottom:1px solid var(--line); align-items:center;}
+  .titem:last-child{border-bottom:none;}
+  .titem .ver{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--amber);}
+  .titem .desc{font-size:13px; color:var(--text);}
+  .titem .desc .why{color:var(--muted); font-size:12px; display:block; margin-top:2px;}
+  .titem .result{font-family:'IBM Plex Mono',monospace; font-size:12px; text-align:right;}
+  .titem .result.bad{color:var(--red);}
+  .titem .result.good{color:var(--teal);}
+  .titem .result.mixed{color:var(--amber);}
+
+  .bars{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:20px;}
+  .bar-row{margin-bottom:18px;}
+  .bar-row:last-child{margin-bottom:0;}
+  .bar-label{display:flex; justify-content:space-between; font-size:12px; color:var(--muted); margin-bottom:6px;}
+  .bar-track{height:9px; background:var(--panel2); border-radius:5px; overflow:hidden; margin-bottom:4px;}
+  .bar-fill{height:100%; border-radius:5px;}
+  .bar-fill.base{background:var(--teal);}
+  .bar-fill.agent{background:var(--amber);}
+
+  .parity{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:20px;}
+  .parity .stat{display:flex; justify-content:space-between; padding:9px 0; border-top:1px solid var(--line); font-size:13px;}
+  .parity .stat:first-of-type{border-top:none;}
+  .parity .stat .v{font-family:'IBM Plex Mono',monospace; color:var(--teal);}
+  .parity .overall{margin-top:14px; padding-top:14px; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:baseline;}
+  .parity .overall .v{font-family:'IBM Plex Mono',monospace; font-size:26px; color:var(--teal);}
+
+  .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media(max-width:820px){.grid-2{grid-template-columns:1fr;}}
+
+  footer{padding:20px clamp(16px,4vw,48px) 40px; color:var(--muted); font-size:11px; font-family:'IBM Plex Mono',monospace; max-width:1200px; margin:0 auto;}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Signal Agent — Lucknow Junction Cluster</h1>
+    <div class="sub">LLM traffic signal coordination via MCP · SUMO · 8 signals · 781 vehicles · 600s</div>
+  </div>
+  <div class="status"><span class="dot"></span> FINAL RESULT — 94.7% performance parity with baseline</div>
+</header>
+
+<main>
+
+  <div class="hero">
+    <div>
+      <div class="big">94.7%</div>
+      <div class="big-label">PERFORMANCE PARITY vs. FIXED-TIME BASELINE</div>
+    </div>
+    <div class="right">
+      <p>Reached after 4 iterations: single-signal control, multi-signal coordination,
+      a failed faster-interval experiment, and a clamp range recalibrated to the
+      junction's real 79s cycle structure. Beats baseline on avg. trip duration.</p>
+    </div>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="label">AVG WAITING TIME</div>
+      <div class="figures"><span class="base">12.81s</span><span class="arrow">→</span><span class="agent bad">14.02s</span></div>
+      <div class="delta bad">+9.4% vs baseline</div>
+    </div>
+    <div class="kpi">
+      <div class="label">AVG TRIP DURATION</div>
+      <div class="figures"><span class="base">28.70s</span><span class="arrow">→</span><span class="agent good">28.24s</span></div>
+      <div class="delta good">−1.6% vs baseline (better)</div>
+    </div>
+    <div class="kpi">
+      <div class="label">AVG TIME LOSS</div>
+      <div class="figures"><span class="base">16.20s</span><span class="arrow">→</span><span class="agent bad">16.95s</span></div>
+      <div class="delta bad">+4.6% vs baseline</div>
+    </div>
+    <div class="kpi">
+      <div class="label">VEHICLES COMPLETED</div>
+      <div class="figures"><span class="base">141</span><span class="arrow">→</span><span class="agent bad">133</span></div>
+      <div class="delta bad">−5.7% vs baseline</div>
+    </div>
+  </div>
+
+  <section>
+    <div class="section-head">
+      <h2>Iteration history</h2>
+      <span class="note">4 versions tested, in order</span>
+    </div>
+    <div class="timeline">
+      <div class="titem">
+        <span class="ver">v1</span>
+        <span class="desc">Single signal, clamp 10–40s
+          <span class="why">No visibility into the other 7 signals in the cluster</span>
+        </span>
+        <span class="result bad">+134% wait time</span>
+      </div>
+      <div class="titem">
+        <span class="ver">Agent C</span>
+        <span class="desc">All 8 signals, coordinated in one prompt
+          <span class="why">Confirmed the diagnosis — meaningful improvement</span>
+        </span>
+        <span class="result mixed">+88% wait time</span>
+      </div>
+      <div class="titem">
+        <span class="ver">Agent C2</span>
+        <span class="desc">Decision interval 30s → 15s
+          <span class="why">Failed — more frequent switching added transition overhead</span>
+        </span>
+        <span class="result bad">+372% wait time</span>
+      </div>
+      <div class="titem">
+        <span class="ver">Agent D</span>
+        <span class="desc">Clamp widened to 20–80s, matching baseline's real 79s cycle
+          <span class="why">Root cause found: baseline uses long 79s cycles; tight clamps forced excess switching</span>
+        </span>
+        <span class="result good">94.7% parity — final</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="grid-2">
+    <section>
+      <div class="section-head">
+        <h2>Final comparison</h2>
+        <span class="note">teal = baseline · amber = agent D</span>
+      </div>
+      <div class="bars">
+        <div class="bar-row">
+          <div class="bar-label"><span>Waiting time</span><span class="mono">12.81s / 14.02s</span></div>
+          <div class="bar-track"><div class="bar-fill base" style="width:91%"></div></div>
+          <div class="bar-track"><div class="bar-fill agent" style="width:100%"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span>Trip duration</span><span class="mono">28.70s / 28.24s</span></div>
+          <div class="bar-track"><div class="bar-fill base" style="width:100%"></div></div>
+          <div class="bar-track"><div class="bar-fill agent" style="width:98%"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span>Time loss</span><span class="mono">16.20s / 16.95s</span></div>
+          <div class="bar-track"><div class="bar-fill base" style="width:96%"></div></div>
+          <div class="bar-track"><div class="bar-fill agent" style="width:100%"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Parity breakdown</h2>
+        <span class="note">100% − |% difference|</span>
+      </div>
+      <div class="parity">
+        <div class="stat"><span>Waiting time</span><span class="v">90.6%</span></div>
+        <div class="stat"><span>Trip duration</span><span class="v">98.4%</span></div>
+        <div class="stat"><span>Time loss</span><span class="v">95.4%</span></div>
+        <div class="stat"><span>Vehicles completed</span><span class="v">94.3%</span></div>
+        <div class="overall"><span>Overall</span><span class="v">94.7%</span></div>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer>
+  SUMO 1.27.1 · gemini-3.5-flash-lite · MCP server extended from XRDS76354/SUMO-MCP-Server · Lucknow, IN (26.847°N 80.946°E)
+</footer>
+
+</body>
+</html>

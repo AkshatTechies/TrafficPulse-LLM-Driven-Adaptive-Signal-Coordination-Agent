@@ -1,0 +1,7 @@
+step,green_seconds,was_clamped,was_fallback,total_halted,reason
+10,25.0,False,False,0,"Within safe limits; applied as-is."
+20,28.0,False,False,0,"Within safe limits; applied as-is."
+30,25.0,False,False,0,"Within safe limits; applied as-is."
+40,25.0,False,False,0,"Within safe limits; applied as-is."
+50,28.0,False,False,2,"Within safe limits; applied as-is."
+60,45.0,False,False,6,"Within safe limits; applied as-is."

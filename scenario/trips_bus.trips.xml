@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-09-29 16:32:37.946325 by Eclipse SUMO randomTrips.py v1_27_1+0000-7717f2379d9
+<configuration>
+    <net-file value="junction.net.xml"/>
+    <output-trip-file value="trips_bus.trips.xml"/>
+    <prefix value="bus"/>
+    <vehicle-class value="bus"/>
+    <end value="600.0"/>
+    <period value="15.0"/>
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="bus_bus" vClass="bus"/>
+    <trip id="bus0" depart="0.00" from="1496912220#0" to="1392550047#0" type="bus_bus"/>
+    <trip id="bus1" depart="15.00" from="47295010#2" to="1278100658#0" type="bus_bus"/>
+    <trip id="bus2" depart="30.00" from="209442175#1" to="-1278100658#0" type="bus_bus"/>
+    <trip id="bus3" depart="45.00" from="-1278100658#0" to="1387995015" type="bus_bus"/>
+    <trip id="bus4" depart="60.00" from="47295010#0" to="-1278100658#0" type="bus_bus"/>
+    <trip id="bus5" depart="75.00" from="1496912220#2" to="1278100658#1" type="bus_bus"/>
+    <trip id="bus6" depart="90.00" from="-1387995015" to="1278100658#0" type="bus_bus"/>
+    <trip id="bus7" depart="105.00" from="47295010#1" to="210669986#3" type="bus_bus"/>
+    <trip id="bus8" depart="120.00" from="209442175#0" to="210669986#1" type="bus_bus"/>
+    <trip id="bus9" depart="135.00" from="47295010#0" to="210669986#3" type="bus_bus"/>
+    <trip id="bus10" depart="150.00" from="47295010#1" to="210669986#2" type="bus_bus"/>
+    <trip id="bus11" depart="165.00" from="-1278100658#1" to="1392550047#0" type="bus_bus"/>
+    <trip id="bus12" depart="180.00" from="-1387995015" to="1392550047#1" type="bus_bus"/>
+    <trip id="bus13" depart="195.00" from="209442175#0" to="1392550047#0" type="bus_bus"/>
+    <trip id="bus14" depart="210.00" from="1387995015" to="209287207" type="bus_bus"/>
+    <trip id="bus15" depart="225.00" from="733185854" to="210669986#3" type="bus_bus"/>
+    <trip id="bus16" depart="240.00" from="1496912220#1" to="1392550047#1" type="bus_bus"/>
+    <trip id="bus17" depart="255.00" from="1496912220#0" to="1392550047#1" type="bus_bus"/>
+    <trip id="bus18" depart="270.00" from="209442175#0" to="1392550047#0" type="bus_bus"/>
+    <trip id="bus19" depart="285.00" from="733185854" to="210669986#0" type="bus_bus"/>
+    <trip id="bus20" depart="300.00" from="-1387995015" to="-1387995015" type="bus_bus"/>
+    <trip id="bus21" depart="315.00" from="-1387995015" to="210669986#3" type="bus_bus"/>
+    <trip id="bus22" depart="330.00" from="-1278100658#1" to="209287207" type="bus_bus"/>
+    <trip id="bus23" depart="345.00" from="733185854" to="210669986#1" type="bus_bus"/>
+    <trip id="bus24" depart="360.00" from="1496912220#0" to="210669986#4" type="bus_bus"/>
+    <trip id="bus25" depart="375.00" from="-1387995015" to="209442172" type="bus_bus"/>
+    <trip id="bus26" depart="390.00" from="47295010#1" to="1392550047#1" type="bus_bus"/>
+    <trip id="bus27" depart="405.00" from="1496912220#1" to="210669986#3" type="bus_bus"/>
+    <trip id="bus28" depart="420.00" from="1496912220#1" to="-1387995015" type="bus_bus"/>
+    <trip id="bus29" depart="435.00" from="47295010#1" to="47295010#3" type="bus_bus"/>
+    <trip id="bus30" depart="450.00" from="-1387995015" to="210669986#0" type="bus_bus"/>
+    <trip id="bus31" depart="465.00" from="210669986#0" to="210669986#1" type="bus_bus"/>
+    <trip id="bus32" depart="480.00" from="209442175#1" to="1392550047#0" type="bus_bus"/>
+    <trip id="bus33" depart="495.00" from="733185854" to="210669986#4" type="bus_bus"/>
+    <trip id="bus34" depart="510.00" from="209442175#1" to="210669986#0" type="bus_bus"/>
+    <trip id="bus35" depart="525.00" from="1278100658#0" to="1392550047#0" type="bus_bus"/>
+    <trip id="bus36" depart="540.00" from="1496912220#2" to="210669986#2" type="bus_bus"/>
+    <trip id="bus37" depart="555.00" from="1392550047#0" to="1392550047#0" type="bus_bus"/>
+    <trip id="bus38" depart="570.00" from="-1278100658#1" to="210669986#3" type="bus_bus"/>
+    <trip id="bus39" depart="585.00" from="47295010#1" to="-1387995015" type="bus_bus"/>
+</routes>

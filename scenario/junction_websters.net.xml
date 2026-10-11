@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-09-30 16:37:45.969509 by Eclipse SUMO tlsCycleAdaptation.py v1_27_1+0000-7717f2379d9
+<configuration>
+    <net-file value="junction.net.xml"/>
+    <output-file value="junction_websters.net.xml"/>
+    <route-files value="routes.rou.xml"/>
+</configuration>
+-->
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <tlLogic id="11821373403" type="static" programID="a" offset="0">
+        <phase duration="16" state="GG"/>
+        <phase duration="6" state="yy"/>
+        <phase duration="5" state="rr"/>
+    </tlLogic>
+    <tlLogic id="13609015422" type="static" programID="a" offset="0">
+        <phase duration="16" state="GG"/>
+        <phase duration="6" state="yy"/>
+        <phase duration="5" state="rr"/>
+    </tlLogic>
+    <tlLogic id="13609015425" type="static" programID="a" offset="0">
+        <phase duration="16" state="GG"/>
+        <phase duration="6" state="yy"/>
+        <phase duration="5" state="rr"/>
+    </tlLogic>
+    <tlLogic id="2196599312" type="static" programID="a" offset="0">
+        <phase duration="16" state="GG"/>
+        <phase duration="6" state="yy"/>
+        <phase duration="5" state="rr"/>
+    </tlLogic>
+    <tlLogic id="2196599314" type="static" programID="a" offset="0">
+        <phase duration="16" state="GG"/>
+        <phase duration="6" state="yy"/>
+        <phase duration="5" state="rr"/>
+    </tlLogic>
+    <tlLogic id="2207518739" type="static" programID="a" offset="0">
+        <phase duration="16" state="GG"/>
+        <phase duration="6" state="yy"/>
+        <phase duration="5" state="rr"/>
+    </tlLogic>
+    <tlLogic id="2207518742" type="static" programID="a" offset="0">
+        <phase duration="16" state="GG"/>
+        <phase duration="6" state="yy"/>
+        <phase duration="5" state="rr"/>
+    </tlLogic>
+    <tlLogic id="602511661" type="static" programID="a" offset="0">
+        <phase duration="16" state="GG"/>
+        <phase duration="6" state="yy"/>
+        <phase duration="5" state="rr"/>
+    </tlLogic>
+</additional>
